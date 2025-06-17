@@ -1,0 +1,3 @@
+[submodule "minesvisual"]
+	path = minesvisual
+	url = git@github.com:ndantam/minesvisual.git
