@@ -2,7 +2,7 @@
 
 PROJNAME="tex_resources_micah_corah"
 
-if ! test -f ../.git; then
+if ! test -d ../.git; then
   echo "Parent is not a git repository." \
     "Verify that this is the correct location for installation," \
     "and initialize as a git repository first."
@@ -11,10 +11,17 @@ fi
 
 function linkfile
 {
-  ln -s ../$1 $PROJNAME/$1
+  echo "Linking: $1"
+  ln -s $PROJNAME/$1 ../$1
 }
 
-cd ..
 echo "Linking files"
 
+
 linkfile micahcorah.sty
+ln -s $PROJNAME/minesvisual/minesvisual.sty ../minesvisual.sty
+
+linkfile bibliography.bib
+linkfile micah_corah_papers.bib
+linkfile publisher_abbreviations.bib
+
