@@ -1,0 +1,67 @@
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+% Fakesection: Mathematical Notation
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\I}{ {\mathbf{I}} } % Identity matrix
+\newcommand{\0}{ {\mathbf{0}} } % Zero matrix
+\newcommand{\trans}{\text{T}}   % Transpose
+
+\renewcommand{\real}{{\spacefont{R}}}
+\newcommand{\integer}{{\spacefont{Z}}}
+\renewcommand{\natural}{{\spacefont{N}}}
+\newcommand{\SOthree}{{\spacefont{SO}(3)}}
+\newcommand{\SEthree}{{\spacefont{SE}(3)}}
+\newcommand{\psd}{{\spacefont{S}}}
+\newcommand{\onevec}{{\mathbbm{1}}}
+
+% Fakesection: Lengths
+
+\newlength\figureheight
+\newlength\figurewidth
+\newlength\phantomheight
+\newlength\compositewidth
+\setlength{\figureheight}{70mm}
+\setlength{\figurewidth}{1.5\figureheight}
+
+% Fakesection: Environments, and commands
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+% Comments that can be removed based on value of "development"
+
+\newif\ifshowdevelopment
+\showdevelopmenttrue
+
+\newcommand{\ifdev}[1]{%
+  \ifshowdevelopment%
+    #1%
+  \else\fi%
+}
+
+\newcommand{\micah}[1]{\ifdev{\textcolor{purple}{#1}}}
+\newcommand{\todo}[1]{\ifdev{\textcolor{red}{#1}}}
+
+% I think this was for revisions
+%\newcommand{\new}{\marginpar{\textcolor{blue}{NEW}}}
+%\newcommand{\fix}{\marginpar{\textcolor{blue}{FIX}}}
+
+\newcommand{\assignment}[1]{\ifdev{\textcolor{Bittersweet}{#1}}}
+
+% Fakesection: Graphics and figures
+\graphicspath{{./fig/}}
+
+\newcommand{\datapath}{{./fig}}
+\newcommand{\setdatapath}[1]{%
+  \renewcommand{\datapath}{#1}%
+  \graphicspath{{#1/}}%
+}
+
