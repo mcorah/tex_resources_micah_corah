@@ -1,6 +1,8 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 
+\RequirePackage{environ}
+
 % Fakesection: Mathematical Notation
 
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -52,6 +54,9 @@
 
 \newcommand{\micah}[1]{\ifdev{\textcolor{purple}{#1}}}
 \newcommand{\todo}[1]{\ifdev{\textcolor{red}{#1}}}
+
+% Hide development by optionally commenting out text
+\NewEnviron{development}{\ifshowdevelopment{\color{blue}\BODY}\fi}
 
 % I think this was for revisions
 %\newcommand{\new}{\marginpar{\textcolor{blue}{NEW}}}
